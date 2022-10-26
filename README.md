@@ -20,7 +20,7 @@ Run Elasticsearch
 #### `docker run -d --name es7176 -p 9200:9200 -e "discovery.type=single-node" elasticsearch:7.17.6`
 
 Run Java 19 (server will run on port 8081). By default, a few users are created by application start. 
-You can change property `preInitialize.initializeUsers = true`
+If you don't want initial creation, change property `preInitialize.initializeUsers = false`
 #### `mvn clean install`
 #### `java -jar target/pet-demo.jar`
 
@@ -42,8 +42,8 @@ Here are some rules of searching:
 * We can flip lastName and firstName in query, but results will have lower score and will be placed at the end of results
 
 E.g. if we have users `[Maria Kennedy-Johnson, John Johnson, Jane Kennedy]` then <br/>
-query `jOhN` will return `[John Johnson, Maria Kennedy-Johnson]` in order<br/>
-query `j k` will return `[Jane Kennedy]`
+query `jOhN` will return `[John Johnson, Maria Kennedy-Johnson]` in order;<br/>
+query `j k` will return `[Jane Kennedy]`.
 
 ### Redux usage
 
