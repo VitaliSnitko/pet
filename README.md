@@ -1,5 +1,5 @@
 Project with a bunch of technologies to demonstrate how they work. 
-For now the main purpose was to demonstrate Elasticsearch and Redux Toolkit.
+For now the main purpose is to demonstrate Elasticsearch and Redux Toolkit.
 Going to be expanded.
 
 ### Other technologies used
@@ -19,12 +19,14 @@ Going to be expanded.
 Run Elasticsearch
 #### `docker run -d --name es7176 -p 9200:9200 -e "discovery.type=single-node" elasticsearch:7.17.6`
 
-Run Java 19 (server will run on port 8081)
+Run Java 19 (server will run on port 8081). By default, a few users are created by application start. 
+You can change property `preInitialize.initializeUsers = true`
 #### `mvn clean install`
 #### `java -jar target/pet-demo.jar`
 
 Run React (server will run on port 3001)
 #### `cd react`
+#### `npm install`
 #### `npm start`
 
 ### Main page
